@@ -286,7 +286,7 @@ body {
 }
 
 .todo-card[data-priority="4"] { border-color: var(--critical-bd); background: linear-gradient(135deg, var(--critical-bg) 0%, var(--bg-2) 60%); }
-.todo-card[data-priority="4"]::before { background: var(--critical); }
+.todo-card[data-priority="4"]::before { background: #ff4444; }
 .todo-card[data-priority="3"] { border-color: var(--high-bd); background: linear-gradient(135deg, var(--high-bg) 0%, var(--bg-2) 60%); }
 .todo-card[data-priority="3"]::before { background: var(--high); }
 .todo-card[data-priority="2"] { border-color: var(--medium-bd); background: linear-gradient(135deg, var(--medium-bg) 0%, var(--bg-2) 60%); }
