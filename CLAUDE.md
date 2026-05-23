@@ -41,9 +41,9 @@ Each priority has three CSS variables controlling its entire visual appearance:
 
 ```css
 :root {
-  --critical:    #ffffff;                   /* white — changed from #ff4444 red in issue #5 (PR #6) */
-  --critical-bg: rgba(255, 255, 255, 0.10);
-  --critical-bd: rgba(255, 255, 255, 0.25);
+  --critical:    #ffffff;                   /* white text — set in issue #5 (PR #6) */
+  --critical-bg: rgba(255, 68, 68, 0.10);   /* red — changed from white in issue #7 (PR #8) */
+  --critical-bd: rgba(255, 68, 68, 0.25);   /* red — changed from white in issue #7 (PR #8) */
 
   --high:        #ff8c42;
   --high-bg:     rgba(255, 140, 66, 0.10);
@@ -59,7 +59,7 @@ Each priority has three CSS variables controlling its entire visual appearance:
 }
 ```
 
-> **Note:** Critical is intentionally **white (`#ffffff`)** as of issue #5 (merged in PR #6) — do not "fix" it back to red unless an issue explicitly asks.
+> **Note:** Critical uses a **white text color (`#ffffff`)** on a **red background/border (`rgba(255, 68, 68, …)`)**. The white text was set in issue #5 (PR #6); the red background and border were set in issue #7 (PR #8). Do not "fix" either of these unless an issue explicitly asks.
 
 Cards use `data-priority` attribute (1-4) to select styles via:
 ```css
