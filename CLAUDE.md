@@ -37,6 +37,30 @@ Each priority has three CSS variables controlling its entire visual appearance:
 | Medium | `--medium` | `--medium-bg` | `--medium-bd` |
 | Low | `--low` | `--low-bg` | `--low-bd` |
 
+### Current values (defined in `:root`)
+
+```css
+:root {
+  --critical:    #ffffff;                   /* white — changed from #ff4444 red in issue #5 (PR #6) */
+  --critical-bg: rgba(255, 255, 255, 0.10);
+  --critical-bd: rgba(255, 255, 255, 0.25);
+
+  --high:        #ff8c42;
+  --high-bg:     rgba(255, 140, 66, 0.10);
+  --high-bd:     rgba(255, 140, 66, 0.25);
+
+  --medium:      #f5c518;
+  --medium-bg:   rgba(245, 197, 24, 0.10);
+  --medium-bd:   rgba(245, 197, 24, 0.25);
+
+  --low:         #4caf82;
+  --low-bg:      rgba(76, 175, 130, 0.10);
+  --low-bd:      rgba(76, 175, 130, 0.25);
+}
+```
+
+> **Note:** Critical is intentionally **white (`#ffffff`)** as of issue #5 (merged in PR #6) — do not "fix" it back to red unless an issue explicitly asks.
+
 Cards use `data-priority` attribute (1-4) to select styles via:
 ```css
 .todo-card[data-priority="4"] { ... }  /* Critical */
