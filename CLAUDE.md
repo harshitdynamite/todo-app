@@ -64,7 +64,7 @@ When an issue mentions: API, endpoint, status code → the file is Controllers/T
 }
 ```
 
-> **Note:** Critical uses a **white text color (`#ffffff`)** on a **red background/border (`rgba(255, 68, 68, …)`)**. The white text was set in issue #5 (PR #6); the red background and border were set in issue #7 (PR #8). Do not "fix" either of these unless an issue explicitly asks.
+> **Note:** Critical uses a **white text color (`#ffffff`)** on a **red background/border (`rgba(255, 68, 68, …)`)**, plus a **red left accent bar (`#ff4444`)**. The white text was set in issue #5 (PR #6); the red background and border were set in issue #7 (PR #8); the red accent bar was set in issue #10 (PR #11). Do not "fix" any of these unless an issue explicitly asks.
 
 Cards use `data-priority` attribute (1-4) to select styles via:
 ```css
@@ -72,6 +72,18 @@ Cards use `data-priority` attribute (1-4) to select styles via:
 .todo-card[data-priority="3"] { ... }  /* High */
 .todo-card[data-priority="2"] { ... }  /* Medium */
 .todo-card[data-priority="1"] { ... }  /* Low */
+```
+
+### Left accent bar (the `::before` stripe on each card)
+
+Each card has a colored left stripe via `.todo-card[data-priority="N"]::before { background: … }`.
+High/Medium/Low pull from their `var(--<priority>)` color, but **Critical is hardcoded to `#ff4444` (red)** — *not* `var(--critical)`, because `--critical` is white (`#ffffff`) and would be invisible as an accent. Changed in issue #10 (PR #11).
+
+```css
+.todo-card[data-priority="4"]::before { background: #ff4444;       }  /* Critical — hardcoded red */
+.todo-card[data-priority="3"]::before { background: var(--high);   }
+.todo-card[data-priority="2"]::before { background: var(--medium); }
+.todo-card[data-priority="1"]::before { background: var(--low);    }
 ```
 
 Badges use classes: `.badge--critical`, `.badge--high`, `.badge--medium`, `.badge--low`
