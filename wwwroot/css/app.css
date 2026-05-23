@@ -14,8 +14,8 @@
 
   /* Priority palette */
   --critical:    #ffffff;
-  --critical-bg: rgba(255, 255, 255, 0.10);
-  --critical-bd: rgba(255, 255, 255, 0.25);
+  --critical-bg: rgba(255, 68, 68, 0.10);
+  --critical-bd: rgba(255, 68, 68, 0.25);
 
   --high:        #ff8c42;
   --high-bg:     rgba(255, 140, 66, 0.10);
