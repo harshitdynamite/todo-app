@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taskflow — Todo Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark">◈</span>
+        <span class="brand-name">Taskflow</span>
+      </div>
+      <div class="header-stats">
+        <span class="stat" id="stat-total"><span class="stat-num">0</span> tasks</span>
+        <span class="stat-divider">·</span>
+        <span class="stat" id="stat-done"><span class="stat-num">0</span> done</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Left: Add form -->
+    <aside class="sidebar">
+      <div class="form-card">
+        <h2 class="form-title">New Task</h2>
+
+        <div class="field">
+          <label class="label" for="title">Title</label>
+          <input class="input" id="title" type="text" placeholder="What needs doing?" />
+        </div>
+
+        <div class="field">
+          <label class="label" for="description">Description</label>
+          <textarea class="input textarea" id="description" placeholder="More detail…" rows="3"></textarea>
+        </div>
+
+        <div class="field-row">
+          <div class="field field--half">
+            <label class="label" for="priority">Priority</label>
+            <select class="input select" id="priority">
+              <option value="4">🔴 Critical</option>
+              <option value="3">🟠 High</option>
+              <option value="2" selected>🟡 Medium</option>
+              <option value="1">🟢 Low</option>
+            </select>
+          </div>
+          <div class="field field--half">
+            <label class="label" for="status">Status</label>
+            <select class="input select" id="status">
+              <option value="0">To Do</option>
+              <option value="1">In Progress</option>
+              <option value="2">Done</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-add" id="btn-add">
+          <span class="btn-icon">+</span>
+          Add Task
+        </button>
+      </div>
+
+      <!-- Filter panel -->
+      <div class="filter-card">
+        <h3 class="filter-title">Filter</h3>
+        <div class="filter-group">
+          <span class="filter-label">Status</span>
+          <div class="filter-pills" id="filter-status">
+            <button class="pill pill--active" data-value="all">All</button>
+            <button class="pill" data-value="0">To Do</button>
+            <button class="pill" data-value="1">In Progress</button>
+            <button class="pill" data-value="2">Done</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Priority</span>
+          <div class="filter-pills" id="filter-priority">
+            <button class="pill pill--active" data-value="all">All</button>
+            <button class="pill pill--critical" data-value="4">Critical</button>
+            <button class="pill pill--high" data-value="3">High</button>
+            <button class="pill pill--medium" data-value="2">Medium</button>
+            <button class="pill pill--low" data-value="1">Low</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right: Cards -->
+    <section class="board" id="board">
+      <div class="empty-state" id="empty-state">
+        <span class="empty-icon">◎</span>
+        <p>No tasks yet. Add one to get started.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Edit modal -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit Task</h3>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <div class="field">
+        <label class="label" for="edit-title">Title</label>
+        <input class="input" id="edit-title" type="text" />
+      </div>
+      <div class="field">
+        <label class="label" for="edit-description">Description</label>
+        <textarea class="input textarea" id="edit-description" rows="3"></textarea>
+      </div>
+      <div class="field-row">
+        <div class="field field--half">
+          <label class="label" for="edit-priority">Priority</label>
+          <select class="input select" id="edit-priority">
+            <option value="4">🔴 Critical</option>
+            <option value="3">🟠 High</option>
+            <option value="2">🟡 Medium</option>
+            <option value="1">🟢 Low</option>
+          </select>
+        </div>
+        <div class="field field--half">
+          <label class="label" for="edit-status">Status</label>
+          <select class="input select" id="edit-status">
+            <option value="0">To Do</option>
+            <option value="1">In Progress</option>
+            <option value="2">Done</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" id="btn-cancel">Cancel</button>
+        <button class="btn-save" id="btn-save">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
