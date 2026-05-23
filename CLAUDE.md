@@ -37,6 +37,11 @@ Each priority has three CSS variables controlling its entire visual appearance:
 | Medium | `--medium` | `--medium-bg` | `--medium-bd` |
 | Low | `--low` | `--low-bg` | `--low-bd` |
 
+## Keyword hints for file matching
+When an issue mentions: color, border, card styling, accent, badge → the file is wwwroot/css/app.css (keyword: css)
+When an issue mentions: sorting, order, priority order → the file is Services/TodoService.cs (keyword: TodoService)  
+When an issue mentions: API, endpoint, status code → the file is Controllers/TodosController.cs (keyword: TodosController)
+
 ### Current values (defined in `:root`)
 
 ```css
@@ -98,7 +103,6 @@ and also re-applied client-side after add/edit in `app.js`.
 
 | Issue type | Files to check |
 |------------|---------------|
-| Card color / styling | `wwwroot/css/app.css` |
 | Card not rendering / wrong data | `wwwroot/js/app.js` → `buildCard()` |
 | Sort order wrong | `Services/TodoService.cs` → `GetAll()` |
 | API returning wrong data | `Controllers/TodosController.cs`, `Services/TodoService.cs` |
@@ -106,3 +110,7 @@ and also re-applied client-side after add/edit in `app.js`.
 | Filter not working | `wwwroot/js/app.js` → `renderBoard()` |
 | Modal not saving | `wwwroot/js/app.js` → `btn-save` click handler |
 | App not starting | `Program.cs`, `TodoApp.csproj` |
+| Card color / styling | `wwwroot/css/app.css` — keyword: **css** |
+| Left accent bar | `wwwroot/css/app.css` — keyword: **css** |
+| Badge color | `wwwroot/css/app.css` — keyword: **css** |
+| Border color | `wwwroot/css/app.css` — keyword: **css** |
