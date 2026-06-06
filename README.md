@@ -1,4 +1,4 @@
-# Taskflow — Todo App
+# Taskflow — Todo App - this is my To-Do app
 
 A clean ASP.NET Core todo app used as the test repository for the GitHub Issue Resolver demo.
 
